@@ -396,6 +396,15 @@ a {
   );
 }
 
+.about-image {
+  width: 100%;
+  height: 100%;
+  min-height: 296px;
+  border-radius: calc(var(--radius) - 6px);
+  object-fit: cover;
+  display: block;
+}
+
 .checks {
   padding: 0;
   list-style: none;
