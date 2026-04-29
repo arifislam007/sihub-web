@@ -10,7 +10,7 @@ $error = '';
             <h2 class="section-title"><?php echo t('contact_title'); ?></h2>
             <p><?php echo t('contact_description'); ?></p>
             <ul>
-                <li><i class="fa-solid fa-location-dot"></i> <?php echo t('contact_location'); ?></li>
+                <li><i class="fa-solid fa-location-dot"></i> <a href="https://maps.app.goo.gl/mmyZqbGQDvKQTXD7A" target="_blank" style="text-decoration: none; color: inherit;"><?php echo t('contact_location'); ?></a></li>
                 <li style="font-size: 1.2rem; color: #28a745;"><i class="fa-solid fa-phone"></i> <a href="tel:<?php echo SITE_PHONE; ?>"><?php echo SITE_PHONE; ?></a></li>
                 <li><i class="fa-solid fa-clock"></i> <?php echo t('contact_classes'); ?>: Fri-Sat & Weekdays</li>
                 <li><i class="fa-solid fa-envelope"></i> <a href="mailto:<?php echo SITE_EMAIL; ?>"><?php echo SITE_EMAIL; ?></a></li>

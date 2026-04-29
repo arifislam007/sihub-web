@@ -98,6 +98,11 @@
     </div>
 </section>
 
+<?php
+// Include courses section on the home page
+include_once(__DIR__ . '/courses.php');
+?>
+
 <section id="features" class="section section-alt">
     <div class="container reveal">
         <h2 class="section-title"><?php echo t('why_us_title'); ?></h2>
@@ -125,8 +130,3 @@
         </div>
     </div>
 </section>
-
-<?php
-// Include courses section on the home page
-include_once(__DIR__ . '/courses.php');
-?>

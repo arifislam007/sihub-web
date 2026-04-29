@@ -12,7 +12,7 @@ $translations['en'] = [
     'nav_home' => 'Home',
     
     // Hero Section
-    'hero_slogan' => 'Learn Today, Lead Tomorrow',
+    'hero_slogan' => 'Lead your future from here',
     'hero_title' => 'Build Your Skills, Build Your Future',
     'hero_subtitle' => 'Sombhabona Skills helps you: Transform Your Future',
     'hero_description' => 'Join our practical, hands-on training programs and prepare yourself for freelancing, jobs, and digital opportunities.',

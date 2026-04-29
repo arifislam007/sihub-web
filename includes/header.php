@@ -43,8 +43,9 @@ $otherLang = $currentLang === 'en' ? 'bn' : 'en';
           <li><a href="/?page=courses"><?php echo t('nav_courses'); ?></a></li>
           <li><a href="/?page=about"><?php echo t('nav_why_us'); ?></a></li>
           <li><a href="/?page=contact">Contact Us</a></li>
+          <li><a href="/?page=contact" class="btn btn-small btn-admission">Admission</a></li>
           <li class="language-switcher">
-            <a href="/?lang=<?php echo $otherLang; ?><?php echo isset($_GET['page']) ? '&page=' . htmlspecialchars($_GET['page']) : ''; ?>" class="btn btn-small">
+            <a href="/?lang=<?php echo $otherLang; ?><?php echo isset($_GET['page']) ? '&page=' . htmlspecialchars($_GET['page']) : ''; ?>" class="btn btn-small btn-language">
               <?php echo $currentLang === 'en' ? 'বাংলা' : 'English'; ?>
             </a>
           </li>
