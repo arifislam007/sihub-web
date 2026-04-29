@@ -11,7 +11,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'] ?? '';
 
     // Simple authentication (in production, use proper password hashing)
-    // Default credentials: admin / admin123
     if ($username === 'admin' && $password === 'admin123') {
         $_SESSION['admin_logged_in'] = true;
         $_SESSION['admin_username'] = $username;
@@ -170,14 +169,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <i class="fa-solid fa-sign-in-alt"></i> Login
             </button>
         </form>
-
-        <div class="back-link">
-            <p style="color: #666; font-size: 0.85rem; margin-bottom: 10px;">Demo Credentials:</p>
-            <p style="color: #666; font-size: 0.85rem;">
-                Username: <strong>admin</strong><br>
-                Password: <strong>admin123</strong>
-            </p>
-        </div>
 
         <div class="back-link">
             <a href="/">← Back to Website</a>
