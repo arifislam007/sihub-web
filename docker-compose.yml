@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   web:
     build:
@@ -5,9 +7,46 @@ services:
       dockerfile: Dockerfile
     container_name: sombhabona_hub_web
     ports:
-      - "8080:80"
+      - "3080:80"
     volumes:
       - ./:/var/www/html
     environment:
       APP_ENV: development
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: sombhabona_hub
+      DB_USER: postgres
+      DB_PASS: postgres123
+    depends_on:
+      - postgres
     restart: unless-stopped
+    networks:
+      - sombhabona_network
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: sombhabona_hub_db
+    environment:
+      POSTGRES_DB: sombhabona_hub
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres123
+    # ports:
+    #   - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./db-setup.sql:/docker-entrypoint-initdb.d/01-init.sql
+    restart: unless-stopped
+    networks:
+      - sombhabona_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
+
+networks:
+  sombhabona_network:
+    driver: bridge

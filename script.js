@@ -106,12 +106,12 @@ faqItems.forEach((item) => {
 });
 
 const form = document.getElementById('contactForm');
-const statusEl = document.querySelector('.form-status');
+const statusEl = document.querySelector('.form-message');
 const validators = {
-  fullName: (value) => value.trim().length >= 3 || 'Please enter at least 3 characters.',
+  full_name: (value) => value.trim().length >= 3 || 'Please enter at least 3 characters.',
   email: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) || 'Please enter a valid email address.',
   phone: (value) => /^[0-9+\-()\s]{8,20}$/.test(value) || 'Please enter a valid phone number.',
-  course: (value) => value.trim() !== '' || 'Please select a course.',
+  course_name: (value) => value.trim() !== '' || 'Please select a course.',
 };
 
 const setFieldError = (field, error) => {
@@ -145,16 +145,20 @@ form?.addEventListener('submit', async (event) => {
   const fields = form.querySelectorAll('input, select, textarea');
   const allValid = [...fields].every((field) => validateField(field));
   if (!allValid) {
-    statusEl.textContent = 'Please fix the highlighted errors and try again.';
-    statusEl.className = 'form-status fail';
-    statusEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    if (statusEl) {
+      statusEl.style.display = 'block';
+      statusEl.className = 'form-message error';
+      statusEl.textContent = 'Please fix the highlighted errors and try again.';
+      statusEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
     return;
   }
 
   const submitBtn = form.querySelector('.submit-btn');
   const label = submitBtn.querySelector('span');
+  const originalLabel = label ? label.textContent : '';
   submitBtn.disabled = true;
-  label.textContent = 'Sending...';
+  if (label) label.textContent = 'Sending...';
 
   try {
     const response = await fetch(form.action, {
@@ -170,16 +174,22 @@ form?.addEventListener('submit', async (event) => {
       throw new Error(data.message || 'Something went wrong while sending your message.');
     }
 
-    statusEl.textContent = 'Message sent successfully. Our team will contact you soon.';
-    statusEl.className = 'form-status ok';
+    if (statusEl) {
+      statusEl.style.display = 'block';
+      statusEl.className = 'form-message success';
+      statusEl.textContent = data.message || 'Message sent successfully. Our team will contact you soon.';
+    }
     form.reset();
   } catch (error) {
-    statusEl.textContent = error.message;
-    statusEl.className = 'form-status fail';
+    if (statusEl) {
+      statusEl.style.display = 'block';
+      statusEl.className = 'form-message error';
+      statusEl.textContent = error.message;
+    }
   } finally {
     submitBtn.disabled = false;
-    label.textContent = 'Send Message';
-    statusEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    if (label) label.textContent = originalLabel;
+    if (statusEl) statusEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 });
 
