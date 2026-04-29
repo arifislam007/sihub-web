@@ -17,6 +17,7 @@
 
         <div class="hero-actions">
             <a href="/?page=courses" class="btn btn-enroll"><?php echo t('hero_cta'); ?></a>
+            <a href="/sombhabona_courses.pdf" class="btn btn-ghost" target="_blank"><i class="fa-solid fa-download"></i> Download Brochure</a>
             <a href="tel:<?php echo SITE_PHONE; ?>" class="btn btn-ghost"><i class="fa-solid fa-phone"></i> <?php echo SITE_PHONE; ?></a>
         </div>
 

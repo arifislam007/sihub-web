@@ -109,6 +109,7 @@ try {
 
         <div style="text-align: center; margin-top: 3rem;">
             <a href="/?page=contact" class="btn btn-enroll"><?php echo t('form_submit'); ?></a>
+            <a href="/sombhabona_courses.pdf" class="btn btn-ghost" target="_blank" style="margin-left: 12px;"><i class="fa-solid fa-download"></i> Download Brochure</a>
         </div>
     </div>
 </section>
