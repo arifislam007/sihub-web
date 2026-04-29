@@ -7,7 +7,9 @@ require_once(__DIR__ . '/../config/config.php');
 require_once(__DIR__ . '/../config/database.php');
 
 // Simple authentication check (you should implement proper auth)
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 if (!isset($_SESSION['admin_logged_in'])) {
     header('Location: /admin/login.php');
     exit;
