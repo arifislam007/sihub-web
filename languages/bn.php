@@ -83,7 +83,10 @@ $translations['bn'] = [
     'contact_title' => 'আমাদের হাব পরিদর্শন করুন',
     'contact_description' => 'শুরু করতে প্রস্তুত? আজই আমাদের দেখুন বা আমাদের সহায়তা লাইনে কল করুন।',
     'contact_location' => '৭৫৬ ওয়েস্ট সেওরাপারা, মিরপুর, ঢাকা',
-    'contact_classes' => 'ক্লাসগুলি',
+    'contact_office_hours' => 'অফিস সময়',
+    'contact_office_hours_value' => 'শনিবার থেকে বৃহস্পতিবার',
+    'contact_time' => 'সময়',
+    'contact_time_value' => 'সকাল ৯টা থেকে সন্ধ্যা ৬টা',
     
     // Contact Form
     'form_title' => 'আজই শুরু করুন',

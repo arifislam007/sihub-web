@@ -83,7 +83,10 @@ $translations['en'] = [
     'contact_title' => 'Visit Our Hub',
     'contact_description' => 'Ready to start? Visit us or call our helpline today.',
     'contact_location' => '756 West Sewrapara, Mirpur, Dhaka',
-    'contact_classes' => 'Classes',
+    'contact_office_hours' => 'Office Hours',
+    'contact_office_hours_value' => 'Saturday to Thursday',
+    'contact_time' => 'Time',
+    'contact_time_value' => '9 AM to 6 PM',
     
     // Contact Form
     'form_title' => 'Get Started Today',
