@@ -45,6 +45,11 @@ $error = '';
                     <option value="basic-computer"><?php echo t('form_course_basic'); ?></option>
                     <option value="digital-marketing"><?php echo t('form_course_digital'); ?></option>
                     <option value="devops"><?php echo t('form_course_devops'); ?></option>
+                    <optgroup label="<?php echo t('course_nsda'); ?>">
+                        <option value="asset-program-digital"><?php echo t('form_course_asset_digital'); ?></option>
+                        <option value="asset-program-graphics"><?php echo t('form_course_asset_graphics'); ?></option>
+                        <option value="asset-program-it"><?php echo t('form_course_asset_it'); ?></option>
+                    </optgroup>
                 </select>
             </div>
 

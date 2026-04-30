@@ -18,10 +18,10 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // Get form data
-$fullName = sanitizeInput($_POST['full_name'] ?? '');
+$fullName = sanitizeInput($_POST['full_name'] ?? ($_POST['fullName'] ?? ''));
 $email = sanitizeInput($_POST['email'] ?? '');
 $phone = sanitizeInput($_POST['phone'] ?? '');
-$courseName = sanitizeInput($_POST['course_name'] ?? '');
+$courseName = sanitizeInput($_POST['course_name'] ?? ($_POST['course'] ?? ''));
 $message = sanitizeInput($_POST['message'] ?? '');
 $lang = sanitizeInput($_POST['lang'] ?? 'en');
 
